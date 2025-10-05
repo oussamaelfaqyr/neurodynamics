@@ -338,51 +338,180 @@
     </div>
   </section>
 
-  <!-- Join CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-20 left-20 w-40 h-40 border border-white rounded-full animate-pulse"></div>
-      <div class="absolute bottom-20 right-20 w-32 h-32 border border-white rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-      <div class="absolute top-1/2 left-1/4 w-24 h-24 border border-white rotate-45 animate-spin" style="animation-duration: 25s;"></div>
-    </div>
-    
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Join Your Fellow Students
-      </h2>
-      <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-        Whether you're a beginner or already have experience, there's a place for you in NEURODYNAMICS. 
-        Let's learn and build the future together!
-      </p>
+  <!-- Our Activities Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
       
-      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <button class="group bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-          <span class="flex items-center gap-2">
-            Join Our Club
-            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
-          </span>
-        </button>
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <div class="w-2 h-2 bg-rose-500 rounded-full animate-pulse"></div>
+          Our Activities
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Club Events & 
+          <span class="bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">Participation</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From welcoming new students to organizing Morocco's premier AI & Robotics camp
+        </p>
+      </div>
+
+      <!-- Activities Cards -->
+      <div class="space-y-8">
         
-        <button 
-          [routerLink]="['/cells']"
-          class="group border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-        >
-          <span class="flex items-center gap-2">
-            Explore Our Cells
-            <i class="fas fa-external-link-alt group-hover:rotate-12 transition-transform duration-300"></i>
-          </span>
-        </button>
+        <!-- THE SEVEN Event -->
+        <div class="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 lg:p-12 border border-blue-100 hover:shadow-2xl transition-all duration-300">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div class="flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-users text-white text-3xl"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <h3 class="text-3xl font-bold text-gray-900">THE SEVEN</h3>
+                <span class="px-4 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full">Integration Week</span>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                A special integration week event bringing together seven clubs to welcome new students to ENSIAS. NEURODYNAMICS participates with an exciting array of robotics demonstrations and AI-powered games, giving newcomers a hands-on preview of what our club has to offer.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-white text-blue-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-gamepad mr-2"></i>Interactive Games
+                </span>
+                <span class="px-4 py-2 bg-white text-cyan-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-robot mr-2"></i>Robotics Demos
+                </span>
+                <span class="px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-brain mr-2"></i>AI Experiences
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rabat Festival de Science -->
+        <div class="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 lg:p-12 border border-purple-100 hover:shadow-2xl transition-all duration-300">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div class="flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-flask text-white text-3xl"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <h3 class="text-3xl font-bold text-gray-900">Rabat Festival de Science</h3>
+                <span class="px-4 py-1 bg-purple-500 text-white text-sm font-semibold rounded-full">Annual Event</span>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                An annual science festival organized by Ribat Al Fath Association where we showcase innovative projects aligned with each year's theme. This event allows us to demonstrate our technological capabilities and engage with the wider scientific community in Rabat.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-white text-purple-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-project-diagram mr-2"></i>Themed Projects
+                </span>
+                <span class="px-4 py-2 bg-white text-pink-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-lightbulb mr-2"></i>Innovation Showcase
+                </span>
+                <span class="px-4 py-2 bg-white text-rose-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-handshake mr-2"></i>Community Engagement
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MARC - Flagship Event -->
+        <div class="group bg-gradient-to-br from-orange-50 via-red-50 to-rose-50 rounded-3xl p-8 lg:p-12 border-2 border-orange-200 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+          <!-- Spotlight Effect -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-3xl"></div>
+          
+          <div class="flex flex-col lg:flex-row gap-8 items-start relative z-10">
+            <div class="flex-shrink-0">
+              <div class="w-24 h-24 bg-gradient-to-br from-orange-500 via-red-500 to-rose-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-xl">
+                <i class="fas fa-trophy text-white text-4xl"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col lg:flex-row lg:items-center gap-3 mb-4">
+                <h3 class="text-4xl font-black text-gray-900">MARC</h3>
+                <span class="px-5 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full shadow-lg">
+                  <i class="fas fa-star mr-2"></i>FLAGSHIP EVENT
+                </span>
+              </div>
+              <p class="text-xl font-semibold text-gray-800 mb-3">
+                Moroccan AI & Robotics Camp
+              </p>
+              <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Our crown jewel event! MARC is Morocco's premier AI and Robotics camp, bringing together students, innovators, and tech enthusiasts for an immersive experience in cutting-edge technology. This multi-day camp features workshops, competitions, keynote speakers, and collaborative projects.
+              </p>
+              <div class="flex flex-wrap gap-3 mb-6">
+                <span class="px-4 py-2 bg-white text-orange-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-calendar-alt mr-2"></i>Multi-Day Camp
+                </span>
+                <span class="px-4 py-2 bg-white text-red-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-user-graduate mr-2"></i>Workshops
+                </span>
+                <span class="px-4 py-2 bg-white text-rose-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-trophy mr-2"></i>Competitions
+                </span>
+                <span class="px-4 py-2 bg-white text-pink-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-microphone mr-2"></i>Keynotes
+                </span>
+              </div>
+              <button 
+                [routerLink]="['/marc']"
+                class="group/btn inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              >
+                <span>Explore MARC Event</span>
+                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="group bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 lg:p-12 border border-green-100 hover:shadow-2xl transition-all duration-300">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div class="flex-shrink-0">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-calendar-plus text-white text-3xl"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <h3 class="text-3xl font-bold text-gray-900">More Events Coming Soon</h3>
+                <span class="px-4 py-1 bg-green-500 text-white text-sm font-semibold rounded-full animate-pulse">
+                  <i class="fas fa-clock mr-2"></i>Stay Tuned
+                </span>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                This year, we're planning to participate in several more exciting events and competitions. We're constantly seeking new opportunities to showcase our skills, collaborate with other institutions, and represent ENSIAS in the tech community.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-white text-green-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-rocket mr-2"></i>Hackathons
+                </span>
+                <span class="px-4 py-2 bg-white text-emerald-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-award mr-2"></i>Competitions
+                </span>
+                <span class="px-4 py-2 bg-white text-teal-600 rounded-full text-sm font-medium shadow-sm">
+                  <i class="fas fa-handshake mr-2"></i>Collaborations
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-
-</div>
-
 <!-- End of About Page Layout -->
  <!-- Add FontAwesome icons CDN in your head tag -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+
  
