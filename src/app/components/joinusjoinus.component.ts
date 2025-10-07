@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="min-h-screen bg-white">
-      <div class="container mx-auto px-6 py-16 max-w-5xl">
+      <div class="container mx-auto px-20 py-16 max-w-5xl">
         
         <!-- Header -->
         <div class="text-center mb-16">
