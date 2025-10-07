@@ -7,106 +7,235 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="min-h-screen bg-gradient-to-br from-red-700 via-red-600 to-red-800 relative overflow-hidden flex items-center justify-center p-4">
-      <!-- Animated background circles -->
-      <div class="absolute top-20 left-20 w-64 h-64 bg-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-      <div class="absolute top-40 right-20 w-64 h-64 bg-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div class="absolute -bottom-8 left-1/2 w-64 h-64 bg-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
-      
-      <div class="relative z-10 max-w-2xl w-full text-center">
-        <!-- Logo Section -->
-        <div class="flex justify-between items-start mb-8 px-4">
-          <div class="w-24 h-24 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm"></div>
-          <div class="w-24 h-24 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm"></div>
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900 relative overflow-hidden">
+      <!-- Animated particles -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div *ngFor="let i of particles" 
+             class="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float"
+             [style.left.%]="i * 10"
+             [style.animation-delay.s]="i * 0.5"></div>
+      </div>
+
+      <!-- Grid overlay -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+
+      <div class="relative z-10 container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12 animate-fade-in">
+          <div class="inline-block">
+            <h1 class="text-6xl md:text-7xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-2xl"
+                style="font-family: 'Orbitron', sans-serif;">
+              NEURODYNAMICS
+            </h1>
+            <div class="h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+          </div>
+          <p class="text-2xl text-cyan-300 mt-4 font-light" style="font-family: 'Rajdhani', sans-serif;">
+            AI & Robotics Club — ENSIAS
+          </p>
         </div>
 
-        <!-- Robot Image Placeholder with Orange Circle -->
-        <div class="relative mb-8">
-          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full"></div>
-          <div class="relative z-10 flex justify-center items-end h-96">
-            <div class="w-48 h-64 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-full relative shadow-2xl transform hover:scale-105 transition-transform duration-300">
-              <!-- Robot face details -->
-              <div class="absolute top-8 left-1/2 -translate-x-1/2 w-32 h-40 bg-white rounded-3xl"></div>
-              <div class="absolute top-32 left-1/2 -translate-x-1/2 w-20 h-24 bg-gradient-to-b from-cyan-400 to-cyan-600 rounded-lg"></div>
+        <!-- Welcome Section -->
+        <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-lg rounded-3xl p-8 mb-8 border border-cyan-500/20 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500">
+          <div class="flex items-start gap-4 mb-6">
+            <span class="material-icons text-5xl text-cyan-400">rocket_launch</span>
+            <div>
+              <h2 class="text-3xl font-bold text-white mb-3" style="font-family: 'Rajdhani', sans-serif;">
+                Welcome to the Future! 🤖✨
+              </h2>
+              <p class="text-gray-300 text-lg leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                We're thrilled that you're interested in joining <span class="text-cyan-400 font-semibold">Neurodynamics</span>, the club born from the fusion of ENSIAS's AI and Robotics clubs. We aim to innovate, build, and explore the future of intelligent systems together.
+              </p>
+              <p class="text-yellow-400 mt-4 font-medium">
+                ⏱️ Please fill out this form carefully. It takes about 3–5 minutes.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- JOIN US Text -->
-        <div class="mb-8 transform hover:scale-110 transition-transform duration-300">
-          <h1 class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 drop-shadow-2xl" 
-              style="font-family: 'Fredoka One', cursive; text-shadow: 4px 4px 0px rgba(0,0,0,0.3);">
-            JOIN US
-          </h1>
-        </div>
-
-        <!-- Purple Banner -->
-        <div class="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-600 rounded-full py-6 px-8 mb-8 shadow-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-purple-500/50">
-          <h2 class="text-3xl font-black text-yellow-300 mb-2" style="font-family: 'Fredoka One', cursive;">
-            NEURODYNAMICS IS RECRUITING
+        <!-- Cells Introduction -->
+        <div class="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-lg rounded-3xl p-8 mb-8 border border-purple-500/20">
+          <h2 class="text-3xl font-bold text-white mb-4 flex items-center gap-3" style="font-family: 'Rajdhani', sans-serif;">
+            <span class="material-icons text-4xl text-purple-400">hub</span>
+            Dynamic Cells Structure
           </h2>
-          <p class="text-white text-xl italic font-light" style="font-family: 'Brush Script MT', cursive;">
-            Apply now and become part of the future
+          <p class="text-gray-300 text-lg leading-relaxed" style="font-family: 'Inter', sans-serif;">
+            At Neurodynamics, we're organized into <span class="text-purple-400 font-semibold">dynamic cells</span> — specialized teams that collaborate to push the limits of innovation. Every member belongs to <span class="text-cyan-400 font-semibold">one technical cell</span> and <span class="text-pink-400 font-semibold">one non-technical cell</span>, depending on their interests and skills.
           </p>
         </div>
 
-        <!-- Apply Button -->
+        <!-- Technical Cells -->
         <div class="mb-8">
-          <a [href]="formUrl" 
-             target="_blank"
-             class="group relative inline-flex items-center justify-center px-12 py-6 text-2xl font-bold text-purple-700 bg-white rounded-3xl overflow-hidden shadow-2xl transform hover:scale-110 transition-all duration-300 hover:shadow-purple-500/50">
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-white via-purple-50 to-purple-100 group-hover:from-purple-50 group-hover:to-white transition-all duration-300"></span>
-            <span class="relative flex items-center gap-3">
-              <span class="material-icons text-3xl">rocket_launch</span>
-              APPLY NOW
-              <span class="material-icons text-3xl animate-bounce">arrow_forward</span>
-            </span>
-          </a>
+          <h3 class="text-4xl font-black text-cyan-400 mb-6 flex items-center gap-3" style="font-family: 'Orbitron', sans-serif;">
+            <span class="material-icons text-5xl">precision_manufacturing</span>
+            ⚙️ TECHNICAL CELLS
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- AI Cell -->
+            <div class="group bg-gradient-to-br from-blue-600/10 to-blue-900/10 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-blue-400">psychology</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">🤖 AI Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Dive into the world of artificial intelligence — from machine learning to neural networks and natural language processing. Members work on smart systems, predictive models, and real-world AI applications.
+              </p>
+            </div>
+
+            <!-- Robotics Cell -->
+            <div class="group bg-gradient-to-br from-cyan-600/10 to-cyan-900/10 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30 hover:border-cyan-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-cyan-400">smart_toy</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">⚡ Robotics Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Focus on robot design, automation, and control systems. Members build, program, and test robots that merge mechanical engineering and AI.
+              </p>
+            </div>
+
+            <!-- Data Cell -->
+            <div class="group bg-gradient-to-br from-green-600/10 to-green-900/10 backdrop-blur-sm rounded-2xl p-6 border border-green-500/30 hover:border-green-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-green-400">analytics</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">📊 Data Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Specialize in data analysis, visualization, and machine learning pipelines. This team extracts insights from data and supports other projects with valuable analytics.
+              </p>
+            </div>
+
+            <!-- Projects Cell -->
+            <div class="group bg-gradient-to-br from-purple-600/10 to-purple-900/10 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-purple-400">lightbulb</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">💡 Projects Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                The heart of our innovation — this cell connects all others. Members manage interdisciplinary projects, prototype ideas, and ensure smooth collaboration between technical and non-technical teams.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="flex justify-center gap-6">
-          <a href="#" class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-125 hover:rotate-12 transition-all duration-300 hover:shadow-xl">
-            <span class="material-icons text-red-600 text-2xl">photo_camera</span>
+        <!-- Non-Technical Cells -->
+        <div class="mb-12">
+          <h3 class="text-4xl font-black text-pink-400 mb-6 flex items-center gap-3" style="font-family: 'Orbitron', sans-serif;">
+            <span class="material-icons text-5xl">palette</span>
+            🎨 NON-TECHNICAL CELLS
+          </h3>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Design Cell -->
+            <div class="group bg-gradient-to-br from-pink-600/10 to-pink-900/10 backdrop-blur-sm rounded-2xl p-6 border border-pink-500/30 hover:border-pink-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-pink-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-pink-400">design_services</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">🎨 Design Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Bring ideas to life through visual creativity. Members design logos, posters, and graphics that define the club's identity, ensuring every project and event has a strong, modern, and consistent look.
+              </p>
+            </div>
+
+            <!-- Media Cell -->
+            <div class="group bg-gradient-to-br from-red-600/10 to-red-900/10 backdrop-blur-sm rounded-2xl p-6 border border-red-500/30 hover:border-red-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-red-400">videocam</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">🎥 Media Cell</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Tell the story of Neurodynamics through digital content. Members handle photography, videography, editing, and social-media storytelling to highlight the club's activities and achievements.
+              </p>
+            </div>
+
+            <!-- Sponsoring Cell -->
+            <div class="group bg-gradient-to-br from-yellow-600/10 to-yellow-900/10 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-yellow-400">handshake</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">💰 Sponsoring & Partnerships</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Build bridges between Neurodynamics and the outside world — seek sponsorships, manage partnerships, and handle logistics for events and projects.
+              </p>
+            </div>
+
+            <!-- Events Cell -->
+            <div class="group bg-gradient-to-br from-orange-600/10 to-orange-900/10 backdrop-blur-sm rounded-2xl p-6 border border-orange-500/30 hover:border-orange-400 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/20">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-icons text-4xl text-orange-400">event</span>
+                <h4 class="text-2xl font-bold text-white" style="font-family: 'Rajdhani', sans-serif;">🎤 Events & Organization</h4>
+              </div>
+              <p class="text-gray-300 leading-relaxed" style="font-family: 'Inter', sans-serif;">
+                Plan and coordinate workshops, conferences, hackathons, and recruitment events. Members ensure every Neurodynamics event runs smoothly and memorably.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center">
+          <a [href]="formUrl" 
+             target="_blank"
+             class="group relative inline-flex items-center justify-center gap-4 px-12 py-6 text-2xl font-black text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-full overflow-hidden shadow-2xl transform hover:scale-110 transition-all duration-500 hover:shadow-cyan-500/50"
+             style="font-family: 'Orbitron', sans-serif;">
+            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+            <span class="relative flex items-center gap-3">
+              <span class="material-icons text-4xl animate-pulse">rocket</span>
+              JOIN NEURODYNAMICS
+              <span class="material-icons text-4xl group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+            </span>
           </a>
-          <a href="#" class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-125 hover:rotate-12 transition-all duration-300 hover:shadow-xl">
-            <span class="material-icons text-red-600 text-2xl">link</span>
-          </a>
-          <a href="#" class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-125 hover:rotate-12 transition-all duration-300 hover:shadow-xl">
-            <span class="material-icons text-red-600 text-2xl">facebook</span>
-          </a>
+          <p class="text-gray-400 mt-6 text-lg" style="font-family: 'Inter', sans-serif;">
+            🚀 Ready to shape the future? Apply now!
+          </p>
         </div>
       </div>
     </div>
   `,
   styles: [`
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@300;400;600&display=swap');
     @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     
-    @keyframes blob {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -50px) scale(1.1); }
-      66% { transform: translate(-20px, 20px) scale(0.9); }
+    @keyframes float {
+      0%, 100% { 
+        transform: translateY(0) translateX(0); 
+        opacity: 0;
+      }
+      50% { 
+        opacity: 1;
+      }
+      100% { 
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+      }
     }
     
-    .animate-blob {
-      animation: blob 7s infinite;
+    .animate-float {
+      animation: float 8s infinite;
     }
     
-    .animation-delay-2000 {
-      animation-delay: 2s;
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
-    .animation-delay-4000 {
-      animation-delay: 4s;
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+    
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, rgba(100, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
   `]
 })
 export class JoinusComponent {
   formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfpaL9x9XjekDu2awG13RAN-7PNAgwlFohs9aYCxJmOU8diPQ/viewform';
+  particles = Array.from({length: 20}, (_, i) => i);
 }
 
 
-// Make sure to add Material Icons in your index.html:
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+// Add to index.html:
+// <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet
