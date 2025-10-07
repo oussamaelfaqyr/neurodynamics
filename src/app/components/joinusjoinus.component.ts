@@ -23,13 +23,12 @@ import { CommonModule } from '@angular/common';
         <!-- Header -->
         <div class="text-center mb-12 animate-fade-in">
           <div class="inline-block">
-            <h1 class="text-6xl md:text-7xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-2xl"
-                style="font-family: 'Orbitron', sans-serif;">
+            <h1 class="text-6xl md:text-7xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-2xl">
               NEURODYNAMICS
             </h1>
             <div class="h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
           </div>
-          <p class="text-2xl text-cyan-300 mt-4 font-light" style="font-family: 'Rajdhani', sans-serif;">
+          <p class="text-2xl text-cyan-300 mt-4 font-light">
             AI & Robotics Club — ENSIAS
           </p>
         </div>
@@ -39,10 +38,10 @@ import { CommonModule } from '@angular/common';
           <div class="flex items-start gap-4 mb-6">
             <span class="material-icons text-5xl text-cyan-400">rocket_launch</span>
             <div>
-              <h2 class="text-3xl font-bold text-white mb-3" style="font-family: 'Rajdhani', sans-serif;">
+              <h2 class="text-3xl font-bold text-white mb-3">
                 Welcome to the Future! 🤖✨
               </h2>
-              <p class="text-gray-300 text-lg leading-relaxed" style="font-family: 'Inter', sans-serif;">
+              <p class="text-gray-300 text-lg leading-relaxed">
                 We're thrilled that you're interested in joining <span class="text-cyan-400 font-semibold">Neurodynamics</span>, the club born from the fusion of ENSIAS's AI and Robotics clubs. We aim to innovate, build, and explore the future of intelligent systems together.
               </p>
               <p class="text-yellow-400 mt-4 font-medium">
@@ -192,7 +191,6 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
   styles: [`
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@300;400;600&display=swap');
     @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     
     @keyframes float {
@@ -238,4 +236,4 @@ export class JoinusComponent {
 
 // Add to index.html:
 // <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-// <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet
+// <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
