@@ -4,7 +4,7 @@ import { About } from './pages/about/about';
 import { MarcEvent } from './pages/marc-event/marc-event';
 import { provideRouter } from '@angular/router';
 import { ApplicationConfig } from '@angular/core';
-import { JoinusComponent } from '.components/joinus.component';
+import { JoinusComponent } from './components/joinusjoinus.component';
 
 export const routes: Routes = [
   { path: 'home', component: Home },
