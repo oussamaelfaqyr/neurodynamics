@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
         <span class="text-purple-600">Neurodynamics</span>
       </h1>
     </div>
-  </div>
 
         <!-- Welcome Section -->
         <div class="mb-16 space-y-8">
