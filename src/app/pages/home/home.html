@@ -26,12 +26,16 @@
       </p>
       
       <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <button class="group bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-          <span class="flex items-center gap-2">
-            Join Our Community
-            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
-          </span>
-        </button>
+       <button
+  routerLink="/joinus"
+  class="group bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+>
+  <span class="flex items-center gap-2">
+    Join Our Community
+    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+  </span>
+</button>
+
         
         <a 
           [routerLink]="['/marc']"
@@ -52,3 +56,4 @@
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </div>
+
