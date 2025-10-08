@@ -46,7 +46,8 @@ import { CommonModule } from '@angular/common';
               
               <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 sm:p-5 bg-indigo-50 border-l-4 border-indigo-500 rounded-lg text-sm sm:text-base">
                 <p class="text-indigo-800 font-semibold flex items-center gap-2">
-                  <div [innerHTML]="getIcon('clock', 'w-5 h-5 text-indigo-600 flex-shrink-0')"></div>
+                  <!-- FIX: Changed <div> to <span> to resolve the NG5002 compilation error -->
+                  <span [innerHTML]="getIcon('clock', 'w-5 h-5 text-indigo-600 flex-shrink-0')"></span>
                   Please fill out this form carefully. It takes about 3–5 minutes.
                 </p>
               </div>
