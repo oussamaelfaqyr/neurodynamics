@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
       </h1>
     </div>
   </div>
-</div>
 
         <!-- Welcome Section -->
         <div class="mb-16 space-y-8">
