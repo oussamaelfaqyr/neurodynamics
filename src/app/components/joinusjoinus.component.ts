@@ -7,16 +7,16 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <!-- Le contenu de la page utilise maintenant la police Inter -->
-    <div class="min-h-screen bg-gray-50">
-      <div class="container mx-auto px-6 py-16 max-w-5xl">
-        
-        <!-- Header -->
-        <div class="text-center mb-16">
-          <h1 class="text-6xl font-extrabold mb-4 tracking-tight">
-            <span class="text-blue-600">Join</span> <span class="text-purple-600">Neurodynamics</span>
-          </h1>
-          <p class="text-xl text-gray-600 font-medium">AI & Robotics Club — ENSIAS</p>
-        </div>
+  <div class="pt-24 bg-gray-50 min-h-screen">
+  <div class="container mx-auto px-6 py-16 max-w-5xl">
+    <div class="text-center mb-16">
+      <h1 class="text-6xl font-extrabold mb-4 tracking-tight">
+        <span class="text-blue-600">Join</span>
+        <span class="text-purple-600">Neurodynamics</span>
+      </h1>
+    </div>
+  </div>
+</div>
 
         <!-- Welcome Section -->
         <div class="mb-16 space-y-8">
