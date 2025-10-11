@@ -1,13 +1,12 @@
-<header class="bg-white/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
+<header class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      <!-- Logo Section - Redesigned -->
+      <!-- Logo Section - Enhanced -->
       <div class="flex items-center space-x-4 group">
-        <!-- Logo Container with Hover Effect -->
+        <!-- Main Logo Group -->
         <div class="flex items-center space-x-3 px-3 py-2 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50">
-          <!-- First Logo with Animation -->
+          <!-- First Logo -->
           <div class="relative">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <img 
               src="LOGONEURO.svg" 
               alt="NEURODYNAMICS Logo" 
@@ -24,63 +23,61 @@
           </div>
         </div>
 
-        <!-- Animated Separator -->
+        <!-- Separator -->
         <div class="hidden lg:flex items-center">
           <div class="w-px h-10 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
         </div>
 
-        <!-- Partner Logo with Hover Effect -->
-        <div class="hidden lg:block relative group/partner">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-xl blur-md opacity-0 group-hover/partner:opacity-20 transition-opacity duration-300"></div>
+        <!-- Partner Logo -->
+        <div class="hidden lg:block">
           <img 
             src="DC_Donates_logo_regular.png" 
             alt="DC Donates Logo" 
-            class="h-9 w-auto object-contain relative z-10 transform group-hover/partner:scale-105 transition-transform duration-300"
+            class="h-9 w-auto object-contain transform hover:scale-105 transition-transform duration-300"
           >
         </div>
       </div>
 
-      <!-- Desktop Navigation - Enhanced -->
+      <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-2 lg:space-x-4">
         <a 
           [routerLink]="['/home']" 
-          routerLinkActive="nav-active"
-          class="nav-link"
+          routerLinkActive="text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50"
+          class="relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-700 rounded-lg transition-all duration-200 hover:text-blue-600 hover:bg-blue-50 cursor-pointer"
         >
           Home
         </a>
 
         <a 
           [routerLink]="['/about']" 
-          routerLinkActive="nav-active"
-          class="nav-link"
+          routerLinkActive="text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50"
+          class="relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-700 rounded-lg transition-all duration-200 hover:text-blue-600 hover:bg-blue-50 cursor-pointer"
         >
           About
         </a>
 
         <a 
           [routerLink]="['/marc']" 
-          routerLinkActive="nav-active"
-          class="nav-link"
+          routerLinkActive="text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50"
+          class="relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-700 rounded-lg transition-all duration-200 hover:text-blue-600 hover:bg-blue-50 cursor-pointer"
         >
           MARC Event
         </a>
 
         <a 
           href="mailto:club.neurodynamics.ensias@gmail.com" 
-          class="ml-2 relative group/btn overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 lg:px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          class="ml-2 relative group overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 lg:px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
         >
           <span class="relative z-10 flex items-center space-x-2">
             <span>Contact Us</span>
-            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </span>
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
         </a>
       </div>
 
-      <!-- Mobile Menu Button - Redesigned -->
+      <!-- Mobile Menu Button -->
       <button 
         (click)="toggleMobileMenu()"
         class="md:hidden relative w-10 h-10 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -90,36 +87,30 @@
         <div class="w-5 h-4 flex flex-col justify-between">
           <span 
             class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300 origin-center"
-            [ngClass]="{
-              'rotate-45 translate-y-[7px]': isMobileMenuOpen,
-              'rotate-0 translate-y-0': !isMobileMenuOpen
-            }"
+            [class.rotate-45]="isMobileMenuOpen"
+            [class.translate-y-[7px]]="isMobileMenuOpen"
           ></span>
           <span 
             class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300"
-            [ngClass]="{
-              'opacity-0 scale-0': isMobileMenuOpen,
-              'opacity-100 scale-100': !isMobileMenuOpen
-            }"
+            [class.opacity-0]="isMobileMenuOpen"
+            [class.scale-0]="isMobileMenuOpen"
           ></span>
           <span 
             class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300 origin-center"
-            [ngClass]="{
-              '-rotate-45 -translate-y-[7px]': isMobileMenuOpen,
-              'rotate-0 translate-y-0': !isMobileMenuOpen
-            }"
+            [class.-rotate-45]="isMobileMenuOpen"
+            [class.-translate-y-[7px]]="isMobileMenuOpen"
           ></span>
         </div>
       </button>
     </div>
 
-    <!-- Mobile Navigation - Completely Redesigned -->
+    <!-- Mobile Navigation -->
     <div 
       class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
-      [ngClass]="{
-        'max-h-0 opacity-0': !isMobileMenuOpen,
-        'max-h-[500px] opacity-100': isMobileMenuOpen
-      }"
+      [class.max-h-0]="!isMobileMenuOpen"
+      [class.opacity-0]="!isMobileMenuOpen"
+      [class.max-h-[500px]]="isMobileMenuOpen"
+      [class.opacity-100]="isMobileMenuOpen"
     >
       <div class="py-6 space-y-2">
         <!-- Partner Logo for Mobile -->
@@ -133,8 +124,8 @@
 
         <a 
           [routerLink]="['/home']" 
-          routerLinkActive="mobile-nav-active"
-          class="mobile-nav-link"
+          routerLinkActive="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm"
+          class="flex items-center space-x-3 text-gray-700 px-4 py-3 rounded-xl transition-all duration-200 font-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 hover:translate-x-1 active:scale-95"
           (click)="closeMobileMenu()"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,8 +136,8 @@
 
         <a 
           [routerLink]="['/about']" 
-          routerLinkActive="mobile-nav-active"
-          class="mobile-nav-link"
+          routerLinkActive="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm"
+          class="flex items-center space-x-3 text-gray-700 px-4 py-3 rounded-xl transition-all duration-200 font-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 hover:translate-x-1 active:scale-95"
           (click)="closeMobileMenu()"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,8 +148,8 @@
 
         <a 
           [routerLink]="['/marc']" 
-          routerLinkActive="mobile-nav-active"
-          class="mobile-nav-link"
+          routerLinkActive="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm"
+          class="flex items-center space-x-3 text-gray-700 px-4 py-3 rounded-xl transition-all duration-200 font-medium hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:text-blue-600 hover:translate-x-1 active:scale-95"
           (click)="closeMobileMenu()"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,54 +174,3 @@
     </div>
   </nav>
 </header>
-
-<style>
-/* Desktop Navigation Links */
-.nav-link {
-  @apply relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-700 rounded-lg transition-all duration-200;
-}
-
-.nav-link::before {
-  content: '';
-  @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover {
-  @apply text-blue-600 bg-blue-50;
-}
-
-.nav-link:hover::before {
-  @apply w-3/4;
-}
-
-.nav-active {
-  @apply text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50;
-}
-
-.nav-active::before {
-  @apply w-3/4;
-}
-
-/* Mobile Navigation Links */
-.mobile-nav-link {
-  @apply flex items-center space-x-3 text-gray-700 px-4 py-3 rounded-xl transition-all duration-200 font-medium;
-}
-
-.mobile-nav-link:hover {
-  @apply bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 transform translate-x-1;
-}
-
-.mobile-nav-link:active {
-  @apply scale-95;
-}
-
-.mobile-nav-active {
-  @apply bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm;
-}
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-</style>
