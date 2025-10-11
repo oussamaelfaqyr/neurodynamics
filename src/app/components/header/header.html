@@ -3,14 +3,31 @@
     <div class="flex items-center justify-between">
       <!-- Logo Section -->
       <div class="flex items-center space-x-3">
-        <img 
-          src="LOGONEURO.svg" 
-          alt="NEURODYNAMICS Logo" 
-          class="w-12 h-12"
-        >
+        <!-- Logo Group -->
+        <div class="flex items-center space-x-2">
+          <!-- First Logo -->
+          <img 
+            src="assets/LOGONEURO.svg" 
+            alt="NEURODYNAMICS Logo" 
+            class="w-12 h-12"
+          >
+
+          <!-- Separator (× symbol) -->
+          <span class="text-2xl font-bold text-gray-400">×</span>
+
+          <!-- Second Logo (Partner Logo) -->
+          <img 
+            src="assets/DC_Donates_logo_regular.png" 
+            alt="DC Donates Logo" 
+            class="w-12 h-12 object-contain"
+          >
+        </div>
+
+        <!-- Club Info -->
         <div>
           <h1 class="text-xl font-bold text-gray-800">NEURODYNAMICS</h1>
           <p class="text-xs text-gray-500">AI & Robotics Club</p>
+          <p class="text-[10px] text-gray-400">in partnership with DC Donates</p>
         </div>
       </div>
 
@@ -31,6 +48,7 @@
         >
           About
         </a>
+
         <a 
           [routerLink]="['/marc']" 
           routerLinkActive="text-blue-600 border-b-2 border-blue-600"
@@ -38,7 +56,11 @@
         >
           MARC Event
         </a>
-        <a href= "mailto:club.neurodynamics.ensias@gmail.com" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+
+        <a 
+          href="mailto:club.neurodynamics.ensias@gmail.com" 
+          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+        >
           Contact Us
         </a>
       </div>
@@ -86,6 +108,7 @@
         >
           Home
         </a>
+
         <a 
           [routerLink]="['/about']" 
           routerLinkActive="text-blue-600 bg-blue-50"
@@ -94,6 +117,7 @@
         >
           About
         </a>
+
         <a 
           [routerLink]="['/marc']" 
           routerLinkActive="text-blue-600 bg-blue-50"
@@ -102,19 +126,15 @@
         >
           MARC Event
         </a>
-        <a href="mailto:club.neurodynamics.ensias@gmail.com"
+
+        <a 
+          href="mailto:club.neurodynamics.ensias@gmail.com"
           class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200"
           (click)="closeMobileMenu()"
         >
-          contact Us
+          Contact Us
         </a>
       </div>
     </div>
   </nav>
-
 </header>
-
-
-
-
-
