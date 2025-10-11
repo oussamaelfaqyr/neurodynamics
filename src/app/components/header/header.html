@@ -1,36 +1,38 @@
 <header class="bg-white shadow-lg fixed w-full top-0 z-50">
-  <nav class="container mx-auto px-6 py-4">
+  <nav class="container mx-auto px-4 py-3">
     <div class="flex items-center justify-between">
+      
       <!-- Logo Section -->
       <div class="flex items-center space-x-3">
-        <!-- Logo Group -->
-        <div class="flex items-center space-x-2">
-          <!-- First Logo -->
-          <img 
-            src="LOGONEURO.svg" 
-            alt="NEURODYNAMICS Logo" 
-            class="w-12 h-12"
-          >
+        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 text-center sm:text-left">
+          <!-- Logos Group -->
+          <div class="flex items-center justify-center sm:justify-start space-x-2">
+            <!-- First Logo -->
+            <img 
+              src="LOGONEURO.svg" 
+              alt="NEURODYNAMICS Logo" 
+              class="w-10 h-10 sm:w-12 sm:h-12"
+            >
+            
+            <!-- Separator (hidden on small screens) -->
+            <span class="hidden sm:inline text-2xl font-bold text-gray-800">|</span>
 
-         
+            <!-- Second Logo -->
+            <img 
+              src="DC_Donates_logo_regular.png" 
+              alt="DC Donates Logo" 
+              class="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+            >
+          </div>
+
+          <!-- Club Info -->
+          <div class="mt-2 sm:mt-0">
+            <h1 class="text-lg sm:text-xl font-bold text-gray-800">NEURODYNAMICS</h1>
+            <p class="text-xs text-gray-500">AI & Robotics Club</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Club Info -->
-        <div>
-          <h1 class="text-xl font-bold text-gray-800">NEURODYNAMICS</h1>
-          <p class="text-xs text-gray-500">AI & Robotics Club</p>
-        </div>
-      
-       <!-- Separator (× symbol) -->
-          <span class="text-2xl font-bold text-gray-800">|</span>
-
-          <!-- Second Logo (Partner Logo) -->
-          <img 
-            src="DC_Donates_logo_regular.png" 
-            alt="DC Donates Logo" 
-            class="w-23 h-23 object-contain"
-          >
-</div>
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
         <a 
@@ -138,10 +140,3 @@
     </div>
   </nav>
 </header>
-
-
-
-
-
-
-
