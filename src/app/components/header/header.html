@@ -2,15 +2,15 @@
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo Section - Enhanced -->
-      <div class="flex items-center space-x-4 group">
+      <div class="flex items-center space-x-2 sm:space-x-4 group">
         <!-- Main Logo Group -->
-        <div class="flex items-center space-x-3 px-3 py-2 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50">
+        <div class="flex items-center space-x-2 sm:space-x-3 px-2 sm:px-3 py-2 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50">
           <!-- First Logo -->
           <div class="relative">
             <img 
               src="LOGONEURO.svg" 
               alt="NEURODYNAMICS Logo" 
-              class="w-11 h-11 sm:w-12 sm:h-12 relative z-10 transform group-hover:scale-110 transition-transform duration-300"
+              class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 relative z-10 transform group-hover:scale-110 transition-transform duration-300"
             >
           </div>
 
@@ -24,16 +24,16 @@
         </div>
 
         <!-- Separator -->
-        <div class="hidden lg:flex items-center">
-          <div class="w-px h-10 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+        <div class="flex items-center px-1 sm:px-2">
+          <div class="w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
         </div>
 
-        <!-- Partner Logo -->
-        <div class="hidden lg:block">
+        <!-- Partner Logo - Now visible on all screens -->
+        <div class="block">
           <img 
             src="DC_Donates_logo_regular.png" 
             alt="DC Donates Logo" 
-            class="h-9 w-auto object-contain transform hover:scale-105 transition-transform duration-300"
+            class="h-7 sm:h-8 md:h-9 w-auto object-contain transform hover:scale-105 transition-transform duration-300"
           >
         </div>
       </div>
@@ -113,15 +113,6 @@
       [class.opacity-100]="isMobileMenuOpen"
     >
       <div class="py-6 space-y-2">
-        <!-- Partner Logo for Mobile -->
-        <div class="flex justify-center mb-4 lg:hidden">
-          <img 
-            src="DC_Donates_logo_regular.png" 
-            alt="DC Donates Logo" 
-            class="h-8 w-auto object-contain opacity-70"
-          >
-        </div>
-
         <a 
           [routerLink]="['/home']" 
           routerLinkActive="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm"
