@@ -1,142 +1,236 @@
-<header class="bg-white shadow-lg fixed w-full top-0 z-50">
-  <nav class="container mx-auto px-4 py-3">
-    <div class="flex items-center justify-between">
-      
-      <!-- Logo Section -->
-      <div class="flex items-center space-x-3">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-2 text-center sm:text-left">
-          <!-- Logos Group -->
-          <div class="flex items-center justify-center sm:justify-start space-x-2">
-            <!-- First Logo -->
+<header class="bg-white/80 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-100">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo Section - Redesigned -->
+      <div class="flex items-center space-x-4 group">
+        <!-- Logo Container with Hover Effect -->
+        <div class="flex items-center space-x-3 px-3 py-2 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50">
+          <!-- First Logo with Animation -->
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <img 
               src="LOGONEURO.svg" 
               alt="NEURODYNAMICS Logo" 
-              class="w-10 h-10 sm:w-12 sm:h-12"
-            >
-            
-            <!-- Separator (hidden on small screens) -->
-            <span class="hidden sm:inline text-2xl font-bold text-gray-800">|</span>
-
-            <!-- Second Logo -->
-            <img 
-              src="DC_Donates_logo_regular.png" 
-              alt="DC Donates Logo" 
-              class="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+              class="w-11 h-11 sm:w-12 sm:h-12 relative z-10 transform group-hover:scale-110 transition-transform duration-300"
             >
           </div>
 
           <!-- Club Info -->
-          <div class="mt-2 sm:mt-0">
-            <h1 class="text-lg sm:text-xl font-bold text-gray-800">NEURODYNAMICS</h1>
-            <p class="text-xs text-gray-500">AI & Robotics Club</p>
+          <div class="hidden sm:block">
+            <h1 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              NEURODYNAMICS
+            </h1>
+            <p class="text-xs text-gray-500 font-medium">AI & Robotics Club</p>
           </div>
+        </div>
+
+        <!-- Animated Separator -->
+        <div class="hidden lg:flex items-center">
+          <div class="w-px h-10 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+        </div>
+
+        <!-- Partner Logo with Hover Effect -->
+        <div class="hidden lg:block relative group/partner">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-xl blur-md opacity-0 group-hover/partner:opacity-20 transition-opacity duration-300"></div>
+          <img 
+            src="DC_Donates_logo_regular.png" 
+            alt="DC Donates Logo" 
+            class="h-9 w-auto object-contain relative z-10 transform group-hover/partner:scale-105 transition-transform duration-300"
+          >
         </div>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <!-- Desktop Navigation - Enhanced -->
+      <div class="hidden md:flex items-center space-x-2 lg:space-x-4">
         <a 
           [routerLink]="['/home']" 
-          routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-          class="text-gray-700 hover:text-blue-600 transition-colors duration-200 pb-1 cursor-pointer"
+          routerLinkActive="nav-active"
+          class="nav-link"
         >
           Home
         </a>
 
         <a 
           [routerLink]="['/about']" 
-          routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-          class="text-gray-700 hover:text-blue-600 transition-colors duration-200 pb-1 cursor-pointer"
+          routerLinkActive="nav-active"
+          class="nav-link"
         >
           About
         </a>
 
         <a 
           [routerLink]="['/marc']" 
-          routerLinkActive="text-blue-600 border-b-2 border-blue-600"
-          class="text-gray-700 hover:text-blue-600 transition-colors duration-200 pb-1 cursor-pointer"
+          routerLinkActive="nav-active"
+          class="nav-link"
         >
           MARC Event
         </a>
 
         <a 
           href="mailto:club.neurodynamics.ensias@gmail.com" 
-          class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+          class="ml-2 relative group/btn overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 lg:px-6 py-2.5 rounded-full font-medium shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
         >
-          Contact Us
+          <span class="relative z-10 flex items-center space-x-2">
+            <span>Contact Us</span>
+            <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button 
-          (click)="toggleMobileMenu()"
-          class="text-gray-700 hover:text-blue-600 focus:outline-none"
-        >
-          <div class="w-6 h-6 flex flex-col justify-center items-center">
-            <span 
-              class="bg-current h-0.5 w-6 transition-all duration-300"
-              [class.rotate-45]="isMobileMenuOpen"
-              [class.translate-y-1.5]="isMobileMenuOpen"
-            ></span>
-            <span 
-              class="bg-current h-0.5 w-6 transition-all duration-300 mt-1"
-              [class.opacity-0]="isMobileMenuOpen"
-            ></span>
-            <span 
-              class="bg-current h-0.5 w-6 transition-all duration-300 mt-1"
-              [class.-rotate-45]="isMobileMenuOpen"
-              [class.-translate-y-1.5]="isMobileMenuOpen"
-            ></span>
-          </div>
-        </button>
-      </div>
+      <!-- Mobile Menu Button - Redesigned -->
+      <button 
+        (click)="toggleMobileMenu()"
+        class="md:hidden relative w-10 h-10 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'"
+        [attr.aria-expanded]="isMobileMenuOpen"
+      >
+        <div class="w-5 h-4 flex flex-col justify-between">
+          <span 
+            class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300 origin-center"
+            [ngClass]="{
+              'rotate-45 translate-y-[7px]': isMobileMenuOpen,
+              'rotate-0 translate-y-0': !isMobileMenuOpen
+            }"
+          ></span>
+          <span 
+            class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300"
+            [ngClass]="{
+              'opacity-0 scale-0': isMobileMenuOpen,
+              'opacity-100 scale-100': !isMobileMenuOpen
+            }"
+          ></span>
+          <span 
+            class="bg-gray-700 h-0.5 w-full rounded-full transition-all duration-300 origin-center"
+            [ngClass]="{
+              '-rotate-45 -translate-y-[7px]': isMobileMenuOpen,
+              'rotate-0 translate-y-0': !isMobileMenuOpen
+            }"
+          ></span>
+        </div>
+      </button>
     </div>
 
-    <!-- Mobile Navigation -->
+    <!-- Mobile Navigation - Completely Redesigned -->
     <div 
-      class="md:hidden transition-all duration-300 ease-in-out overflow-hidden"
-      [class.max-h-0]="!isMobileMenuOpen"
-      [class.max-h-96]="isMobileMenuOpen"
-      [class.opacity-0]="!isMobileMenuOpen"
-      [class.opacity-100]="isMobileMenuOpen"
+      class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+      [ngClass]="{
+        'max-h-0 opacity-0': !isMobileMenuOpen,
+        'max-h-[500px] opacity-100': isMobileMenuOpen
+      }"
     >
-      <div class="py-4 space-y-4">
+      <div class="py-6 space-y-2">
+        <!-- Partner Logo for Mobile -->
+        <div class="flex justify-center mb-4 lg:hidden">
+          <img 
+            src="DC_Donates_logo_regular.png" 
+            alt="DC Donates Logo" 
+            class="h-8 w-auto object-contain opacity-70"
+          >
+        </div>
+
         <a 
           [routerLink]="['/home']" 
-          routerLinkActive="text-blue-600 bg-blue-50"
-          class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors duration-200"
+          routerLinkActive="mobile-nav-active"
+          class="mobile-nav-link"
           (click)="closeMobileMenu()"
         >
-          Home
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          <span>Home</span>
         </a>
 
         <a 
           [routerLink]="['/about']" 
-          routerLinkActive="text-blue-600 bg-blue-50"
-          class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors duration-200"
+          routerLinkActive="mobile-nav-active"
+          class="mobile-nav-link"
           (click)="closeMobileMenu()"
         >
-          About
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>About</span>
         </a>
 
         <a 
           [routerLink]="['/marc']" 
-          routerLinkActive="text-blue-600 bg-blue-50"
-          class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors duration-200"
+          routerLinkActive="mobile-nav-active"
+          class="mobile-nav-link"
           (click)="closeMobileMenu()"
         >
-          MARC Event
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>MARC Event</span>
         </a>
 
-        <a 
-          href="mailto:club.neurodynamics.ensias@gmail.com"
-          class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200"
-          (click)="closeMobileMenu()"
-        >
-          Contact Us
-        </a>
+        <div class="pt-4">
+          <a 
+            href="mailto:club.neurodynamics.ensias@gmail.com"
+            class="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl active:scale-95 transition-all duration-200"
+            (click)="closeMobileMenu()"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>Contact Us</span>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+
+<style>
+/* Desktop Navigation Links */
+.nav-link {
+  @apply relative px-3 lg:px-4 py-2 text-sm lg:text-base font-medium text-gray-700 rounded-lg transition-all duration-200;
+}
+
+.nav-link::before {
+  content: '';
+  @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  @apply text-blue-600 bg-blue-50;
+}
+
+.nav-link:hover::before {
+  @apply w-3/4;
+}
+
+.nav-active {
+  @apply text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50;
+}
+
+.nav-active::before {
+  @apply w-3/4;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-link {
+  @apply flex items-center space-x-3 text-gray-700 px-4 py-3 rounded-xl transition-all duration-200 font-medium;
+}
+
+.mobile-nav-link:hover {
+  @apply bg-gradient-to-r from-blue-50 to-purple-50 text-blue-600 transform translate-x-1;
+}
+
+.mobile-nav-link:active {
+  @apply scale-95;
+}
+
+.mobile-nav-active {
+  @apply bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 shadow-sm;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+</style>
